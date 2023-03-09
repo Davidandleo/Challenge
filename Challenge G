@@ -1,0 +1,17 @@
+use_bpm 160
+use_synth :saw
+noteswith2= [:c2,:e2,:g2,:b2,:c3,:b2,:g2,:e2]
+n=noteswith2
+sleep = 0.5
+index =0
+b=index
+live_loop :main_theme do
+  8. times do
+    with_fx :distortion do
+      play (noteswith2[b])
+      b = b + 1
+      sleep 0.5
+    end
+    b = 0
+  end
+end
